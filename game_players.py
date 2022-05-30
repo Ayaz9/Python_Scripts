@@ -190,7 +190,7 @@ def group_game_float():
 # Determine how many group games will be, collecting the group games to the dictionary main_dict (game_players)
 def run(group_games_count, pty_list, main_dict):
     # print(f'Total GAMES will be : {group_games_count} \n')
-    main_dict['total_group_games'] = f'Total Games will be : {group_games_count}'
+    main_dict['final_group_games'] = f'Final Group games will be : {group_games_count}'
     for i in range(group_games_count): # How many games
         # print(f'GAME #{i+1}')
         # game_players[f'Game_#{i+1}']

@@ -49,8 +49,8 @@ game_information = {}
 players_input = ['Ayaz', 'Aslan','Orxan', 'Ayxan', 'Hatem', 'Aga', 'Jack', 'Virginia', 'Rayan', 'Alessandro', 'Kaylan', 'Cheyenne', 'Amara', 'Vlad', 'Benedict']
 # players_input = ['Ayaz', 'Aslan','Orxan', 'Ayxan', 'Hatem', 'Aga']
 # players_input = []  # not handled. Handle directly in the project 
-time_input = 120
-courts = 7
+time_input = 130
+courts = 4
 # User input - END
 
 # Useful counts we use during the functions execution
@@ -95,7 +95,7 @@ for i in range(len(my_dict['key_0'])):
 
 # Find how many group games and how many minutes we have
 group_games = len(all_games) / courts
-each_game_time = time_input / group_games
+each_game_time = format(time_input / group_games, '.2f')
 # Find how many group games and how many minutes we have - END
 
 # print(f'Players : {players_count}')
@@ -106,6 +106,7 @@ each_game_time = time_input / group_games
 # Adding initial game information to dictionary game_players
 game_players['players'] = f'Players : {players_count}'
 game_players['courts'] = f'Courts : {courts}'
+game_players['total_teams'] = f'Total teams {len(all_games)}'
 game_players['group_games'] = f'Group games : (Total games)/Courts = {group_games}'
 game_players['each_group_time'] = f'Each group game time : {each_game_time} mins'
 game_players['less_players'] = False
@@ -189,7 +190,7 @@ def group_game_float():
 # Determine how many group games will be, collecting the group games to the dictionary main_dict (game_players)
 def run(group_games_count, pty_list, main_dict):
     # print(f'Total GAMES will be : {group_games_count} \n')
-    main_dict['total_games'] = f'Total Games will be : {group_games_count}'
+    main_dict['total_group_games'] = f'Total Games will be : {group_games_count}'
     for i in range(group_games_count): # How many games
         # print(f'GAME #{i+1}')
         # game_players[f'Game_#{i+1}']
